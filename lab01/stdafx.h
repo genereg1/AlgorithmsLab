@@ -27,3 +27,8 @@
 
 
 #include <objbase.h>
+
+#include <fstream>	//работа с файлами
+#include <vector>	//работа с контейнером vector
+#include <math.h>	//работа с математическими функци€ми
+using namespace std;	//использование пространства имен стандартной библиотеки

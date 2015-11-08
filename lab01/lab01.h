@@ -13,3 +13,18 @@ namespace main
 
 }; // namespace main
 
+namespace lab02
+{
+	typedef int elem;
+	typedef vector<elem> cont;
+	typedef cont::const_iterator it;
+
+	void Input(cont& c, int N, elem mn, elem mx);
+	elem Process(const cont& c, elem M);
+
+	extern elem Result;
+	void PrintResults(HDC wdc, HWND wnd);
+
+}; // namespace lab02
+
+

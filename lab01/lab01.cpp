@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "lab01.h"
-//git add
+//git add 2
 namespace main
 {
 
@@ -82,6 +82,9 @@ namespace main
 
 	void Paint(HWND hwnd)
 	{
+		HDC wdc = GetDC(hwnd);
+		lab02::PrintResults(wdc, hwnd);
+		ReleaseDC(hwnd, wdc);
 	}
 
 };// namespace main
@@ -93,6 +96,14 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 	main::RegisterClass(hInstance);
 	if (!main::InitInstance(hInstance, nCmdShow))
 		return -1;
+	lab02::cont src;
+	lab02::Input(src, 100, -100, 100);
+
+	lab02::Result = lab02::Process(src, 0);
+
+	//вызовем принудительное обновление окна
+	PostMessage(main::hWnd, WM_PAINT, 0, 0);
+
 
 	MSG  msg;
 	do
@@ -105,4 +116,9 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 	} while (WM_QUIT != msg.message);
 
 	return (int)msg.wParam;
+
+	
+
 }
+
+
